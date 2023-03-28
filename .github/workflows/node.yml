@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js version 18
@@ -14,4 +14,4 @@ jobs:
         with: 
           node-version: '18'
       - run: npm install
-      - run: npm run build --prefix client
+      - run: cd client && npm run build
