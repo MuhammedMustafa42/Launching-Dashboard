@@ -1,4 +1,4 @@
-name: Launching-Dashboard CI
+name: Launching Dashboard CI
 on:
   push:
     branches: [ main ]
@@ -8,7 +8,7 @@ jobs:
   build:
     env:
       CI: true
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js version 18
@@ -16,4 +16,4 @@ jobs:
         with: 
           node-version: '18'
       - run: npm install
-      - run: cd client && npm run build
+      - run: npm run build --prefix client
